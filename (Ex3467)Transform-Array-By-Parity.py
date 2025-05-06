@@ -10,10 +10,13 @@ class Solution(object):
         # return even+odd
 
         # solution2
-        lister = []
-        for num in nums:
-            if num % 2 == 0:
-                lister.append(0)
-            else:
-                lister.append(1)
-        return sorted(lister)
+        # lister = []
+        # for num in nums:
+        #     if num % 2 == 0:
+        #         lister.append(0)
+        #     else:
+        #         lister.append(1)
+        # return sorted(lister)
+
+        # solution3
+        return sorted([0 if num % 2 == 0 else 1 for num in nums])
