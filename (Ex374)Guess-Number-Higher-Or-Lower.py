@@ -11,14 +11,27 @@ class Solution(object):
         :type n: int
         :rtype: int
         """
-        left,right=0,n
-        while left<=right:
-            mid = (left+right)//2
+        # solution1
+        # left,right=0,n
+        # while left<=right:
+        #     mid = (left+right)//2
+        #     res = guess(mid)
+        #     if res == 0:
+        #         return mid
+        #     if res == 1:
+        #         left = mid + 1
+        #     if res == -1:
+        #         right = mid -1 
+        # return -1
+
+        # solution2
+        def search(left, right):
+            mid = (left + right) // 2
             res = guess(mid)
             if res == 0:
                 return mid
-            if res == 1:
-                left = mid + 1
-            if res == -1:
-                right = mid -1 
-        return -1
+            elif res == 1:
+                return search(mid + 1, right)
+            else:
+                return search(left, mid - 1)
+        return search(1, n)
