@@ -23,7 +23,7 @@ class Solution(object):
         #     if res == -1:
         #         right = mid -1 
         # return -1
-
+        guess = None
         # solution2
         def search(left, right):
             mid = (left + right) // 2
